@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import { Image, StyleSheet, View, TouchableOpacity } from "react-native";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import { spacing } from "../theme";
 import H3 from "./H3";
@@ -8,8 +8,8 @@ import MutedText from "./MutedText";
 import H1 from "../components/H1";
 
 const images = [
-    require("../1.jpg"),
-    require("../2.jpg")
+    require("../3.jpg"),
+    require("../4.jpg")
 ];
 
 const Item = ({i}) => {
@@ -19,48 +19,51 @@ const Item = ({i}) => {
                 style={styles.image}
                 source={images[i]}
             />
-            <H3>Item Name</H3>
-            <MutedText>Description</MutedText>
-            <Text style={styles.price}>GHC 280.00</Text>
+            <View style={styles.details}>
+                <H3>Item Name</H3>
+                <MutedText>Description</MutedText>
+                <Text style={styles.price}>GHC 280.00</Text>
+            </View>
         </TouchableOpacity>
     )
 }
 
-const Explore = () => {
+const BestSelling = () => {
     return(
         <>
-            <H1>Explore</H1>
-            <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}
+            <H1>Best Selling</H1>
+            <View
+                showsVerticalScrollIndicator={false}
             >
                 {
                     [...new Array(2)].map((item, i) => <Item key={i} i={i} />)
                 }
-            </ScrollView>
+            </View>
         </>
     )
 }
 
 const styles = new StyleSheet.create({
     image: {
-        width: RFPercentage(30),
-        height: RFPercentage(30),
+        width: RFPercentage(14),
+        height: RFPercentage(14),
         borderRadius: 10,
-        marginBottom: RFPercentage(2),
     },
     item: {
-        marginLeft: spacing[0],
+        marginHorizontal: spacing[0],
         padding: RFPercentage(2),
         borderRadius: 20,
         elevation: 6,
         backgroundColor: "#fff",
-        marginBottom: RFPercentage(2),
+        marginBottom: RFPercentage(5),
+        flexDirection: "row",
+    },
+    details: {
+        marginLeft: RFPercentage(5),
     },
     price: {
-        marginTop: spacing[0], 
-        fontSize: RFPercentage(3)
+        fontSize: RFPercentage(2.5)
     }
 })
 
-export default Explore;
+export default BestSelling;

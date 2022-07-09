@@ -6,6 +6,7 @@ import {
 import Appbar from "../components/Appbar";
 import Searchbar from "../components/Searchbar";
 import Explore from "../components/Explore";
+import BestSelling from "../components/BestSelling";
 
 const Home = () => {
 
@@ -17,6 +18,7 @@ const Home = () => {
             />
             <Searchbar />
             <Explore />
+            <BestSelling />
         </ScrollView>
     )
 };
