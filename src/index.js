@@ -4,6 +4,7 @@ import {
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './views/Home';
+import Product from './views/Product';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,10 @@ const Routes = () => {
           <Stack.Screen
             name="Home"
             component={Home}
+          />
+          <Stack.Screen
+            name="Product"
+            component={Product}
           />
         </Stack.Navigator>
       </NavigationContainer>

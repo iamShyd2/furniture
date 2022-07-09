@@ -3,10 +3,10 @@ import { StyleSheet } from "react-native";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import Text from "./Text";
 
-const H3 = ({children}) => {
+const H3 = ({children, style}) => {
     return(
         <Text
-            style={styles.text}
+            style={[styles.text, style]}
         >
             {children}
         </Text>

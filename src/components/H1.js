@@ -4,10 +4,10 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 import { spacing } from "../theme";
 import Text from "./Text";
 
-const H1 = ({children}) => {
+const H1 = ({children, style}) => {
     return(
         <Text
-            style={styles.text}
+            style={[styles.text, style]}
         >
             {children}
         </Text>
